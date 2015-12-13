@@ -1,12 +1,13 @@
 $(function() {
-  const PARENT_FACE_X = '157px'; // Distance of face hole from left. Gross.
-  const PARENT_FACE_Y = '76px' // Distance of face hole from top. Gross.
-  const PARENT_FACE_HEIGHT = '186px' // The height of the face hole. Gross.
-  const PARENT_FACE_WIDTH = 135; // The width of the face hole. Gross.
+  const PARENT_FACE_X = '140px'; // Distance of face hole from left. Gross.
+  const PARENT_FACE_Y = '110px' // Distance of face hole from top. Gross.
+  const PARENT_FACE_HEIGHT = '140px' // The height of the face hole. Gross.
+  const PARENT_FACE_WIDTH = 131; // The width of the face hole. Gross.
 
   var imageFace = $('#image-face'); // The element the face is planted onto
   var imageTarget = $('#image-target'); // The "face hole". Gross.
   var imagePreview = $('#image-preview');
+  var parentTarget = $('#parent-target');
 
   // Place the image target element on document load from the constants that are
   // defined above.
@@ -16,6 +17,10 @@ $(function() {
       css('top', PARENT_FACE_Y).
       css('height', PARENT_FACE_HEIGHT).
       css('width', PARENT_FACE_WIDTH)
+
+    parentTarget.
+      css('height', $('#main-image').height()).
+      css('width', $('#main-image').width())
   });
 
   // Pulls the face out from the file input
@@ -23,12 +28,6 @@ $(function() {
     var data = $(this)[0].files[0];
 
     showPreview(data);
-  });
-
-  $('#image-upload').click(function(event) {
-    event.preventDefault();
-
-    processFace();
   });
 
   // Return how big the original face is in comparision with the "face hole".
@@ -79,6 +78,7 @@ $(function() {
 
     reader.onload = function(event) {
       imagePreview.attr('src', event.target.result)
+      processFace();
     }
 
     reader.readAsDataURL(data);

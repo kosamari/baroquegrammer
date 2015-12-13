@@ -11,11 +11,16 @@
 }
 
 .image-target {
-  background: #000;
-  overflow: hidden;
   position: absolute;
   z-index: 50;
 }
+
+.parent-target {
+  position: absolute;
+  overflow: hidden;
+  z-index: 80;
+}
+
 
 .main-image {
   left: 0;
