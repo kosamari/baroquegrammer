@@ -1,12 +1,12 @@
 {
-  "name": "baroquegrammer",
+  "name": "janliser",
   "version": "1.0.0",
-  "description": "Become a baroquegrammer at will",
+  "description": "Become a Jan Lehnardt at will",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "philduffy",
+  "author": "kosamari",
   "license": "ISC",
   "dependencies": {
     "jquery": "^2.1.4",
